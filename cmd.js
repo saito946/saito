@@ -28,7 +28,7 @@ const allowedUIDs = ["61577716215531", "61577591883109"];
 
 module.exports = {
 	config: {
-		name: "cmd",
+		name: "xmd",
 		version: "1.16",
 		author: "NTKhang",
 		countDown: 5,
