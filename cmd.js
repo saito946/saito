@@ -101,11 +101,12 @@ module.exports = {
 
 	onStart: async ({ args, message, api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData, event, commandName, getLang }) => {
 	
-	const permission = global.GoatBot.config.DEV;
- if (!permission.includes(event.senderID)) {
- api.sendMessage("You don't have enough permission to use this command. Only My Author Have Access.", event.threadID, event.messageID);
- return;
- }
+	const permission = global.GoatBot?.config?.DEV || [];
+  if (!permission.includes(event.senderID)) {
+    api.sendMessage("❌ You don't have permission to use this command. Only my author can access it.", event.threadID, event.messageID);
+    return;
+  }
+
 		const { unloadScripts, loadScripts } = global.utils;
 		if (
 			args[0] == "load"
